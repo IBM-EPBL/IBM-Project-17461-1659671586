@@ -1,0 +1,6 @@
+Why is python more popular programming language ?
+ Python language is  one of the most accessible programming language with simple syntax.
+ It is a dynamically typed programming language,it supports object oriented concepts.
+ It is a general purpose and interpreted language.
+ 
+ 
