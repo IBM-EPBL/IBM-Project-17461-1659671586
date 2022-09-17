@@ -3,4 +3,16 @@ Why is python more popular programming language ?
  It is a dynamically typed programming language,it supports object oriented concepts.
  It is a general purpose and interpreted language.
  
+What arethe other frameworks that can be used with python?
+ 1.Django(a web framework)
+ 2.Pyramid
+ 3.Turbo gears
+ 4.Web 2PY
+ 5.CherryPY
+ 6.Flask(micro frameworks)
+ 7.Sanic
+ 
+What is the fullform of WSGI?
+ WSGI-web Server Gateway Interface
+ 
  
