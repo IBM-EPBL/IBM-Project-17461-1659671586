@@ -23,4 +23,4 @@ for i in range(int(raw_input())):
     elif s[0] == "reverse":
         arr.reverse()
     elif s[0] == "print":
-        print arr
+        print (arr)
