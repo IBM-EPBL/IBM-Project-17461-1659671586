@@ -14,5 +14,8 @@ What arethe other frameworks that can be used with python?
  
 What is the fullform of WSGI?
  WSGI-web Server Gateway Interface
+ WSGI plays a vital role at the time when you deploy your Django or Flask application.
+ It explains how a web server communicates with python web applications/frameworks and 
+ how web applications/frameworks can be chained for processing a request.
  
  
