@@ -1,0 +1,18 @@
+Html Input Types
+      
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="tel">
+<input type="time">
+<input type="url">
+<input type="week">
