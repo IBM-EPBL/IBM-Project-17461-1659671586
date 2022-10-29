@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SriFashion</title>
+		<link rel="stylesheet" href="https://s3.jp-tok.cloud-object-storage.appdomain.cloud/smart3/assign3.css">
+	</head>
+	<body bgcolor="purple">
+		<h1 style="color:white"><i>Sri Fashion</i></h1>
+		<div>
+			<img src="https://s3.jp-tok.cloud-object-storage.appdomain.cloud/smart3/1.jpg" width="200" height="500">	
+			<img src="https://s3.jp-tok.cloud-object-storage.appdomain.cloud/smart3/2.jpg" width="200" height="500">
+			<img src="https://s3.jp-tok.cloud-object-storage.appdomain.cloud/smart3/4.jpg" width="200" height="500">
+			<img src="https://s3.jp-tok.cloud-object-storage.appdomain.cloud/smart3/5.jpg" width="200" height="500">
+			<img src="https://s3.jp-tok.cloud-object-storage.appdomain.cloud/smart3/6.jpg" width="200" height="500">
+		</div>
+		<script>
+  			window.watsonAssistantChatOptions = {
+    			integrationID: "58ee9d2f-25a0-483d-91fa-6288362a7714", // The ID of this integration.
+    			region: "us-south", // The region your integration is hosted in.
+    			serviceInstanceID: "0217c2c3-719e-4636-9d77-661b8eb342b2", // The ID of your service instance.
+    			onLoad: function(instance) { instance.render(); }
+  			};
+  			setTimeout(function(){
+    			const t=document.createElement('script');
+    			t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    			document.head.appendChild(t);
+  			});
+		</script>
+	</body>
+</html>
