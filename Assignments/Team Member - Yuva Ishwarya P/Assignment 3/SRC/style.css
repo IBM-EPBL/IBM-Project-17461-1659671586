@@ -1,0 +1,15 @@
+body{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+img{
+height:250px;
+border-radius:10px;
+margin:10px;
+}
+img{
+border-radius: 50%;
+}
+
