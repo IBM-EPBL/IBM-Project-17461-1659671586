@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U NiK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/style.css">
+</head>
+
+<body>
+    
+    <section id="header">
+        <a href="#"><img src="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/logo.png" class="logo" alt="" width="150" height="60"></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a href="/index">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/cart"><i class="fa fa-shopping-bag"></i></a></li>
+                <li><a class="active" href="/register"><i class="fa fa-user-secret"></i></a></li>
+            </ul>
+    </section>
+    
+    <section id="register">
+        <form method="post">
+        <div class="container">
+        <h1>Register/User</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+    
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" id="name" required>
+    
+        <label for="phn"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="phn" required>
+    
+        <label for="email"><b>Phone Number</b></label>
+        <input type="text" placeholder="Enter Phone Number" name="phn" id="email" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+        <button type="submit" class="registerbtn">Register</button>
+        
+        <br> <h3 style="color: red">{{error}} </h3>
+             <h3 style="color: green">{{success}}</h3>
+        <br>
+        </div>
+     
+        <div class="container signin">
+        <p>Already have an account? <a href="/loginUser">Sign in</a>.</p>
+        </div>
+       </form>
+    </section>
+
+    
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/logo.png" alt="" width="200" height="100">
+            <h4>Contact</h4>
+            <p><strong>E-Mail: </strong>uniksmartfashion@gmail.com</p>
+            <p><strong>Phone: </strong>0000000000</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fa fa-facebook-f"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-pinterest-p"></i>
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Tearms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+        
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track my order</a>
+            <a href="#">Help</a>
+        </div>
+       
+    </footer>
+          <div class="copyright">
+              <center><p> C 2022, PNT2022TMID23050 - Smart Fashion Recommender Application </p></center>
+          </div>
+          
+    
+    
+    
+        <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "5ddc2b44-af18-41f8-b5be-fbacc52d49da", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "06c70e8f-e24c-4270-a448-65a2517c4baa", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+    
+</body>
+
+</html>
+
+
+
+
