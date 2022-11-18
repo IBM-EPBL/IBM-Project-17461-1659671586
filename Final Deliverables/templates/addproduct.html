@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U NiK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/style.css">
+</head>
+
+<body>
+    
+    <section id="header">
+        <a href="#"><img src="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/logo.png" class="logo" alt="" width="150" height="60"></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="/index">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/cart"><i class="fa fa-shopping-bag"></i></a></li>
+                <li><a href="/register"><i class="fa fa-user-secret"></i></a></li>
+            </ul>
+    </section>
+    
+      <form method="post">
+        <div class="box">
+            <div class="form">
+                <h2 style="padding-top:30px">ADD PRODUCTS</h2>
+                
+                <div class="inputBox"  >
+                      
+                    <select name="cc" style="width: 100%;background:#800080;border:none;position: relative;height:45px;outline: none;color: lightpink;border-radius: 4px;">
+                        <option value="col1">col1</option>
+                        <option value="col2">col2</option>
+                        <option value="col3">col3</option>
+                        <option value="col4">col4</option>
+                    </select><br>
+    
+                </div>
+                <div class="inputBox"  >
+                    <br><br>
+                    <span  > <span class="font">NAME</span></span>
+                    <input type="text" name="name"   required>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                  <span > <span class="font">IMAGE</span></span>
+                  <input type="text" name="image" required>
+                  
+                  <i></i>
+              </div>
+                <div class="inputBox">
+                    <span > <span class="font">categorie</span></span>
+                    <input type="text" name="categorie" required>
+                    
+                    <i></i>
+                </div>
+                <div class="inputBox"  >
+                  <span > <span class="font">rate</span></span>
+                  <input type="text" name="rate" required>
+                  
+                </div>
+                <br> 
+                
+                
+                <input type="submit" value="enter">
+            </div>
+        </div>
+    </form>
+    
+    
+        <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "5ddc2b44-af18-41f8-b5be-fbacc52d49da", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "06c70e8f-e24c-4270-a448-65a2517c4baa", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+</body>
+</html>

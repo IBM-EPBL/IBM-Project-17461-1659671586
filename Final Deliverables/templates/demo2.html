@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U NiK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/style.css">
+    
+    <style>
+              
+            
+            #shopping-cart {
+            	margin: 40px;
+            }
+            
+            #product-grid {
+            	margin: 40px;
+            }
+            
+            #shopping-cart table {
+            	width: 100%;
+            	background-color: #F0F0F0;
+            }
+            
+            #shopping-cart table td {
+            	background-color: #FFFFFF;
+            }
+            
+            .txt-heading {
+            	color: #211a1a;
+            	border-bottom: 1px solid #E0E0E0;
+            	overflow: auto;
+            }
+            
+            #btnEmpty {
+            	background-color: #ffffff;
+            	border: #d00000 1px solid;
+            	padding: 5px 10px;
+            	color: #d00000;
+            	float: right;
+            	text-decoration: none;
+            	border-radius: 3px;
+            	margin: 10px 0px;
+            }
+            
+            .btnAddAction {
+                padding: 5px 10px;
+                margin-left: 5px;
+                background-color: #efefef;
+                border: #E0E0E0 1px solid;
+                color: #211a1a;
+                float: right;
+                text-decoration: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            
+            #product-grid .txt-heading {
+            	margin-bottom: 18px;
+            }
+            
+            .product-item {
+            	float: left;
+            	background: #ffffff;
+            	margin: 30px 30px 0px 0px;
+            	border: #E0E0E0 1px solid;
+            }
+            
+            .product-image {
+            	height: 155px;
+            	width: 250px;
+            	background-color: #FFF;
+            }
+            
+            .clear-float {
+            	clear: both;
+            }
+            
+            .demo-input-box {
+            	border-radius: 2px;
+            	border: #CCC 1px solid;
+            	padding: 2px 1px;
+            }
+            
+            .tbl-cart {
+            	font-size: 0.9em;
+            }
+            
+            .tbl-cart th {
+            	font-weight: normal;
+            }
+            
+            .product-title {
+            	margin-bottom: 20px;
+            }
+            
+            .product-price {
+            	float:left;
+            }
+            
+            .cart-action {
+            	float: right;
+            }
+            
+            .product-quantity {
+                padding: 5px 10px;
+                border-radius: 3px;
+                border: #E0E0E0 1px solid;
+            }
+            
+            .product-tile-footer {
+                padding: 15px 15px 0px 15px;
+                overflow: auto;
+            }
+            
+            .cart-item-image {
+            	width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: #E0E0E0 1px solid;
+                padding: 5px;
+                vertical-align: middle;
+                margin-right: 15px;
+            }
+            .no-records {
+            	text-align: center;
+            	clear: both;
+            	margin: 38px 0px;
+            }
+    </style>
+</head>
+
+<body>
+    
+    <section id="header">
+        <a href="#"><img src="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/logo.png" class="logo" alt="" width="150" height="60"></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="/index">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/cart"><i class="fa fa-shopping-bag"></i></a></li>
+                <li><a href="/register"><i class="fa fa-user-secret"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <div>
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+			<ul class=flashes>
+			{% for message in messages %}
+			  <li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+		  {% endif %}
+		{% endwith %}
+	</div>
+
+	<div id="shopping-cart">
+		<div class="txt-heading">Shopping Cart</div>		
+		{% if 'cart_item' in session %}
+			<a id="btnEmpty" href="{{ url_for('.empty_cart') }}">Empty Cart</a>
+			<table class="tbl-cart" cellpadding="10" cellspacing="1">
+			<tbody>
+				<tr>
+					<th style="text-align:left;">Name</th>
+					<th style="text-align:left;">Description</th>
+					<th style="text-align:right;" width="5%">Quantity</th>
+					<th style="text-align:right;" width="10%">Unit Price</th>
+					<th style="text-align:right;" width="10%">Price</th>
+					<th style="text-align:center;" width="5%">Remove</th>
+				</tr>
+				{% for key, val in session['cart_item'].items() %}
+					{% set quantity = session['cart_item'][key]['quantity'] %}
+					{% set price = session['cart_item'][key]['price'] %}
+					{% set item_price = session['cart_item'][key]['total_price'] %}					
+					<tr>
+						<td><img src="{{ session['cart_item'][key]['image'] }}" class="cart-item-image" />{{ session['cart_item'][key]['name'] }}</td>
+						<td>{{ session['cart_item'][key]['desc'] }}</td>
+						<td style="text-align:right;">{{ quantity }}</td>
+						<td  style="text-align:right;">₹ {{ price }}</td>
+						<td  style="text-align:right;">₹ {{ item_price }}</td>
+						<td style="text-align:center;">
+							<a href="{{ url_for('.delete_product', desc=session['cart_item'][key]['desc']) }}" class="btnRemoveAction">
+								<img src="/static/images/icon-delete.png" alt="Remove Item" />
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+				<tr>
+					<td colspan="2" align="right">Total:</td>
+					<td align="right">{{ session['all_total_quantity'] }}</td>
+					<td align="right" colspan="2"><strong>₹ {{ session['all_total_price'] }}</strong></td>
+					<td></td>
+				</tr>
+			</tbody>
+			</table>
+		{% else: %}
+			<div class="no-records">Your Cart is Empty</div>
+		{% endif %}
+	</div>
+    
+    <div id="product-grid">
+		<div class="txt-heading">Products</div>
+
+		{% for product in products %}
+
+			<div class="product-item">
+				<form method="post" action="/add">
+					<div class="product-image"><img src="{{ product.IMAGE }}"></div>
+					<div class="product-tile-footer">
+						<div class="product-title">{{ product.NAME }}</div>
+						<div class="product-price">₹ {{ product.PRICE}}</div>
+						<div class="cart-action">
+							<input type="hidden" name="desc" value="{{ product.DESC }}"/>
+							<input type="text" class="product-quantity" name="quantity" value="1" size="2" />
+							<input type="submit" value="Add to Cart" class="btnAddAction" />
+						</div>
+					</div>
+				</form>
+			</div>
+
+		{% endfor %}
+	
+	</div>
+    
+    </footer>
+          <div class="copyright">
+              <center><p> C 2022, PNT2022TMID23050 - Smart Fashion Recommender Application </p></center>
+          </div>
+          
+    
+    
+    
+        <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "5ddc2b44-af18-41f8-b5be-fbacc52d49da", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "06c70e8f-e24c-4270-a448-65a2517c4baa", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+    
+</body>
+
+</html>
+

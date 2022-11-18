@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U NiK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/style.css">
+    
+    <style>
+       <style>
+            * {
+              box-sizing: border-box;
+            }
+            #split{
+                padding-top:40px;
+            }
+            #split .row{
+                padding-bottom:125px;
+            }
+            
+            #split h4{
+                padding-top:10px;
+                text-align:center;
+            }
+            
+            .column {
+              float: left;
+              width: 43.33%;
+              margin:40px;
+              padding: 5px;
+            }
+            
+            button.normalr{
+                font-size:14px;
+                font-weight:600;
+                padding:15px 30px;
+                color:#fff;
+                background-color:#800080;
+                border-radius:4px;
+                cursor:pointer;
+                border:none;
+                outline:none;
+                transition:0.2s;
+            }
+            
+            /* Clearfix (clear floats) */
+            .row::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+    </style>
+</head>
+
+<body>
+    
+    <section id="header">
+        <a href="#"><img src="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/logo.png" class="logo" alt="" width="150" height="60"></a>
+        
+        <div>
+            <ul id="navbar">
+                <li><a href="/index">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/cart"><i class="fa fa-shopping-bag"></i></a></li>
+                <li><a class="active" href="/register"><i class="fa fa-user-secret"></i></a></li>
+            </ul>
+    </section>
+    
+    <section id="split">
+        <div class="row">
+          <div class="column">
+            <h4>Admin</h4>
+            <h4>Register as Admin</h4>
+            <img src="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/user.jpg" width="300" height="300" alt="Snow" style="width:100%">
+            <a href="/registerAdmin"><center><button class="normalr">Click Here</button></center></a>
+          </div>
+          <div class="column">
+            <h4>User</h4>
+            <h4>Register as User</h4>
+            <img src="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/user1.jpg" width="300" height="300"  alt="Forest" style="width:100%">
+            <a href="/registerUser"><center><button class="normalr">Click Here</button></center></a>
+          </div>
+        </div>
+    </section>
+
+    
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="https://unik.s3.jp-tok.cloud-object-storage.appdomain.cloud/logo.png" alt="" width="200" height="100">
+            <h4>Contact</h4>
+            <h4>Admin</h4>
+            <p><strong>E-Mail: </strong>uniksmartfashion@gmail.com</p>
+            <p><strong>Phone: </strong>0000000000</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fa fa-facebook-f"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-pinterest-p"></i>
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Tearms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+        
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track my order</a>
+            <a href="#">Help</a>
+        </div>
+       
+    </footer>
+          <div class="copyright">
+              <center><p> C 2022, PNT2022TMID23050 - Smart Fashion Recommender Application </p></center>
+          </div>
+          
+    
+    
+    
+        <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "5ddc2b44-af18-41f8-b5be-fbacc52d49da", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "06c70e8f-e24c-4270-a448-65a2517c4baa", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+    
+</body>
+
+</html>
+
