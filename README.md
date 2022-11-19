@@ -17,3 +17,6 @@
 <h4><b>1.	Admin and</h4></b>
 <h4><b>2.	User</h4></b>
 
+<h3>For Documentation click here : https://github.com/IBM-EPBL/IBM-Project-17461-1659671586/tree/main/Final%20Deliverables/Documentation</h3>
+
+<h3>For Demo Video click here : https://drive.google.com/file/d/1UlssRomcIQVUbQs_GmugylOgSMOJP8dV/view?usp=drivesdk</h3>
